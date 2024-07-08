@@ -2,7 +2,7 @@
 # Author: Sreraman Muralidharan
 Distributed quantum computing simulator
 
-Modulues: 
+Modules: 
 a) NonLocalQuantumGates:
 This module facilitates the application of non-local quantum gates between the qubits residing in different nodes. With this functionality, quantum gates can span across nodes, paving the way for more extensive and intricate distributed quantum algorithms.
 
