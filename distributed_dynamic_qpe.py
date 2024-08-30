@@ -1,7 +1,7 @@
 from qiskit import QuantumRegister, ClassicalRegister, QuantumCircuit, Aer, transpile, execute
 from qiskit.providers.aer import noise
 from qiskit.providers.aer.noise import pauli_error
-import distributed
+import DQCS
 import numpy as np
 from numpy import linalg
 import matplotlib.pyplot as plt
@@ -65,7 +65,7 @@ for i in range(num_qubits):
     circuit.measure(i, i)
 circ, unitary = create_initial_circuit(q, c)
 circ = QPE(unitary, circ, num_qubits)
-gate_app, qc = distributed.DistributedCircuits(transpile(circ, basis_gates=['u', 'h', 'cx'], optimization_level=3), {"1": [i for i in range(num_qubits)], "2": [num_qubits, num_qubits+1]}).create_circuit()
+gate_app, qc = DQCS.DistributedCircuits(transpile(circ, basis_gates=['u', 'h', 'cx'], optimization_level=3), {"1": [i for i in range(num_qubits)], "2": [num_qubits, num_qubits+1]}).create_circuit()
 q, c = QuantumRegister(circ.num_qubits + 4, 'q'), ClassicalRegister(4, 'c')
 circuit_0 = QuantumCircuit(q, c)
 circuit_0.append(qc.to_instruction(), q[0:circ.num_qubits + 4], c[0:4])
