@@ -1,5 +1,6 @@
 # DQCS
 # Author: Sreraman Muralidharan
+**Licence:** MIT — see [LICENSE](LICENSE). If you use this work, please cite: Muralidharan, S. et al., Journal of Supercomputing (2025). https://link.springer.com/article/10.1007/s11227-025-07125-w
 
 Distributed quantum computing simulator
 
@@ -29,6 +30,4 @@ qc.cx(0,3)
 nodes = {"1": [0, 1], "2": [2, 3]}
 
 distributed.DistributedCircuits(qc, nodes).create_circuit()
-
-**Licence:** MIT — see [LICENSE](LICENSE). If you use this work, please cite: Muralidharan, S. et al., Journal of Supercomputing (2025). https://link.springer.com/article/10.1007/s11227-025-07125-w
 
